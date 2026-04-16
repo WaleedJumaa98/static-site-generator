@@ -1,6 +1,6 @@
 import unittest
-from parentnode import ParentNode
-from leafnode import LeafNode
+from parent_node import ParentNode
+from leaf_node import LeafNode
 
 
 class TestParentNode(unittest.TestCase):

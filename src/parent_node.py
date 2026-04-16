@@ -1,4 +1,4 @@
-from htmlnode import HtmlNode
+from html_node import HtmlNode
 
 
 class ParentNode(HtmlNode):
