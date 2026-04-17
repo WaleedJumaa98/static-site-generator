@@ -1,5 +1,5 @@
 from md_parser.blocks import BlockType, block_to_block_type, markdown_to_blocks
-from md_parser.splitter import text_to_textnodes
+from md_parser.inline import text_to_textnodes
 from nodes.html_node import LeafNode, ParentNode
 from nodes.text_node import TextType
 

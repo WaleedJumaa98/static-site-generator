@@ -1,6 +1,7 @@
 from md_parser.blocks import BlockType, markdown_to_blocks, block_to_block_type
-from md_parser.extractor import extract_markdown_images, extract_markdown_links
-from md_parser.splitter import (
+from md_parser.inline import (
+    extract_markdown_images,
+    extract_markdown_links,
     split_nodes_delimiter,
     split_nodes_image,
     split_nodes_link,

@@ -1,6 +1,6 @@
 import sys
-from copy_content import copy_files_recursive
-from generate_pages_recursive import generate_pages_recursive
+from ssg.assets import copy_files_recursive
+from ssg.builder import generate_pages_recursive
 
 
 def main():
