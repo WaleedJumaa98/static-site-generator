@@ -1,6 +1,6 @@
 import unittest
 from nodes.text_node import TextType, TextNode
-from markdown.converter import text_node_to_html_node
+from md_parser.converter import text_node_to_html_node
 
 
 class TestTextNodeToHtmlNode(unittest.TestCase):

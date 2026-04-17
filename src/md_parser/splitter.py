@@ -1,5 +1,5 @@
 from nodes.text_node import TextType, TextNode
-from markdown.extractor import extract_markdown_images, extract_markdown_links
+from md_parser.extractor import extract_markdown_images, extract_markdown_links
 
 
 def split_nodes_delimiter(old_nodes, delimiter, text_type):

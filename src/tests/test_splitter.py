@@ -1,6 +1,6 @@
 import unittest
 from nodes.text_node import TextType, TextNode
-from markdown.splitter import (
+from md_parser.splitter import (
     split_nodes_delimiter,
     split_nodes_image,
     split_nodes_link,
