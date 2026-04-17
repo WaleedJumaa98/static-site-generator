@@ -13,6 +13,10 @@ def generate_page(from_path, template_path, dest_path, basepath="/"):
     content_node = markdown_to_html_node(content)
     html_content = content_node.to_html()
 
+    # Replace paths in the HTML CONTENT first
+    html_content = html_content.replace('href="/', f'href="{basepath}')
+    html_content = html_content.replace('src="/', f'src="{basepath}')
+
     # Read template
     with open(template_path, "r") as f:
         template = f.read()
@@ -23,7 +27,7 @@ def generate_page(from_path, template_path, dest_path, basepath="/"):
     html_page = template.replace("{{ Content }}", html_content)
     html_page = html_page.replace("{{ Title }}", title)
 
-    # Replace paths with basepath
+    # Also replace paths in template
     html_page = html_page.replace('href="/', f'href="{basepath}')
     html_page = html_page.replace('src="/', f'src="{basepath}')
 
