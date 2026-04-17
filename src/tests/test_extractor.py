@@ -1,5 +1,5 @@
 import unittest
-from extract_markdown import extract_markdown_links, extract_markdown_images
+from markdown.extractor import extract_markdown_links, extract_markdown_images
 
 
 class TestExtractMarkdown(unittest.TestCase):
@@ -49,5 +49,6 @@ class TestExtractMarkdown(unittest.TestCase):
         matches = extract_markdown_links("This is text with a link [to boot dev]()")
         self.assertListEqual([("to boot dev", "")], matches)
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()

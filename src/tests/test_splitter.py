@@ -1,13 +1,11 @@
 import unittest
-from text_node import TextType, TextNode
-from split_nodes import (
+from nodes.text_node import TextType, TextNode
+from markdown.splitter import (
     split_nodes_delimiter,
     split_nodes_image,
     split_nodes_link,
     text_to_textnodes,
 )
-
-# Test cases for split_nodes_delimiter function
 
 
 class TestSplitNodesDelimiter(unittest.TestCase):
@@ -38,9 +36,6 @@ class TestSplitNodesDelimiter(unittest.TestCase):
         self.assertTrue(
             "Invalid markdown: missing closing delimiter" in str(context.exception)
         )
-
-
-# Test cases for split_nodes_image function
 
 
 class TestSplitNodesImage(unittest.TestCase):
@@ -147,9 +142,6 @@ class TestSplitNodesImage(unittest.TestCase):
         self.assertEqual(new_nodes, expected)
 
 
-# Test cases for split_nodes_link function
-
-
 class TestSplitNodesLink(unittest.TestCase):
     def test_split_link(self):
         nodes = [
@@ -252,7 +244,6 @@ class TestSplitNodesLink(unittest.TestCase):
         self.assertEqual(new_nodes, expected)
 
 
-# Test cases for text_to_textnodes function
 class TestTextToTextNodes(unittest.TestCase):
     def test_text_to_textnodes(self):
         text = "This is **bold** text with an _italic_ word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"

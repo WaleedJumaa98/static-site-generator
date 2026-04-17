@@ -1,7 +1,6 @@
 import unittest
-
-from text_node import TextType, TextNode
-from node_html_converter import text_node_to_html_node
+from nodes.text_node import TextType, TextNode
+from markdown.converter import text_node_to_html_node
 
 
 class TestTextNodeToHtmlNode(unittest.TestCase):
@@ -47,5 +46,6 @@ class TestTextNodeToHtmlNode(unittest.TestCase):
             html_node.props, {"src": "https://example.com/image.jpg", "alt": "Alt text"}
         )
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,5 +1,5 @@
 import unittest
-from html_node import HtmlNode
+from nodes.html_node import HtmlNode
 
 
 class TestHtmlNode(unittest.TestCase):
@@ -23,5 +23,6 @@ class TestHtmlNode(unittest.TestCase):
         expected_repr = "HtmlNode(tag=div, value=Hello, children=None, props={'class': 'container'})"
         self.assertEqual(repr(node), expected_repr)
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()

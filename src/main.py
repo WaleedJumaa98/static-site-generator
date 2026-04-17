@@ -1,6 +1,4 @@
-from text_node import TextNode, TextType
-
-print("hello world")
+from nodes.text_node import TextNode, TextType
 
 
 def main():

@@ -10,6 +10,11 @@ class BlockType(Enum):
     ORDERED_LIST = "ordered_list"
 
 
+def markdown_to_blocks(markdown):
+    blocks = markdown.split("\n\n")
+    return [block.strip() for block in blocks if block.strip()]
+
+
 def block_to_block_type(block):
     if (
         block.startswith("# ")
@@ -22,28 +27,23 @@ def block_to_block_type(block):
         return BlockType.HEADING
     elif block.startswith("```\n") and block.endswith("```"):
         return BlockType.CODE
-
     elif block.startswith(">"):
         blocks = block.split("\n")
         for b in blocks:
             if not b.startswith(">"):
                 return BlockType.PARAGRAPH
         return BlockType.QUOTE
-
     elif block.startswith("- "):
         blocks = block.split("\n")
         for b in blocks:
             if not b.startswith("- "):
                 return BlockType.PARAGRAPH
         return BlockType.UNORDERED_LIST
-
     elif block[0].isdigit():
         blocks = block.split("\n")
         for i in range(len(blocks)):
             if not blocks[i].startswith(f"{i+1}. "):
                 return BlockType.PARAGRAPH
-
         return BlockType.ORDERED_LIST
-
     else:
         return BlockType.PARAGRAPH

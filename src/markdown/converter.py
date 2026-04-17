@@ -1,5 +1,5 @@
-from leaf_node import LeafNode
-from text_node import TextType
+from nodes.html_node import LeafNode
+from nodes.text_node import TextType
 
 
 def text_node_to_html_node(text_node):
@@ -17,3 +17,7 @@ def text_node_to_html_node(text_node):
         return LeafNode(
             "img", None, props={"src": text_node.url, "alt": text_node.text}
         )
+
+
+def markdown_to_html_node(markdown):
+    pass
